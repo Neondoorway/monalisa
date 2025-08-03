@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Flower Bloom AR</title>
+    <title>Mona AR</title>
 
     <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
@@ -57,7 +57,7 @@
     <!-- AR Experience -->
     <div class="ar-scene-container">
       <a-scene
-        mindar-image="imageTargetSrc: https://rickfouche.github.io/FlowerBloom/targets/Bloom.mind; uiScanning: false;"
+        mindar-image="imageTargetSrc: https://neondoorway.github.io/monalisa/targets/Mona.mind; uiScanning: false;"
         color-space="sRGB"
         renderer="colorManagement: true, physicallyCorrectLights"
         vr-mode-ui="enabled: false"
@@ -65,8 +65,8 @@
       >
         <a-assets>
           <video
-            id="bloomVideo"
-            src="mp4/Bloomloop.mp4"
+            id="monaVideo"
+            src="https://neondoorway.github.io/monalisa/mp4/Monaloop.mp4"
             preload="auto"
             loop
             muted
@@ -75,7 +75,7 @@
           ></video>
         </a-assets>
 
-      <a-camera
+        <a-camera
           position="0 0 0"
           look-controls="enabled: false"
           raycaster="objects: .clickable"
@@ -85,15 +85,15 @@
         <!-- Display video on target scan -->
         <a-entity mindar-image-target="targetIndex: 0">
           <a-video
-               src="#bloomVideo"
-  width="1.3"
-  height="1"
-  position="0 0 0"
-  scale="0.75 0.75 0.75"
-  autoplay
-  loop
-  muted
-  playsinline
+            src="#monaVideo"
+            width="1.3"
+            height="1"
+            position="0 0 0"
+            scale="0.75 0.75 0.75"
+            autoplay
+            loop
+            muted
+            playsinline
           ></a-video>
         </a-entity>
       </a-scene>
@@ -122,7 +122,7 @@
 
       const target = document.querySelector("[mindar-image-target]");
       const tapCatcher = document.getElementById("tap-catcher");
-      const video = document.getElementById("bloomVideo");
+      const video = document.getElementById("monaVideo");
 
       target.addEventListener("targetFound", () => {
         console.log("✅ Target Found — show link + play video");
@@ -144,6 +144,8 @@
     </script>
   </body>
 </html>
+
+
 
 
 
