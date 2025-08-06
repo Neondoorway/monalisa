@@ -37,13 +37,39 @@
         height: 100vh;
         background: black;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-        color: white;
-        font-family: sans-serif;
-        font-size: 1.2rem;
         z-index: 9999;
         transition: opacity 0.5s ease;
+      }
+
+      #nd-logo {
+        width: 120px;
+        opacity: 0;
+        animation: fadeInLogo 1s ease-out forwards;
+      }
+
+      .powered-by {
+        color: white;
+        font-size: 12px;
+        font-family: sans-serif;
+        opacity: 0;
+        margin-top: 10px;
+        animation: fadeInText 1s ease-out forwards;
+        animation-delay: 1.2s;
+      }
+
+      @keyframes fadeInLogo {
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeInText {
+        to {
+          opacity: 1;
+        }
       }
     </style>
   </head>
@@ -51,7 +77,8 @@
   <body>
     <!-- 🚪✨ Front Loader -->
     <div id="loader">
-      <div id="loader-text">🚪✨ Loading AR Experience...</div>
+      <img src="targets/ndlogo.png" alt="Neon Doorway Logo" id="nd-logo" />
+      <p class="powered-by">Powered by Neon Doorway</p>
     </div>
 
     <!-- AR Experience -->
@@ -144,6 +171,7 @@
     </script>
   </body>
 </html>
+
 
 
 
